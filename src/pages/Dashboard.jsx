@@ -9,16 +9,17 @@ import LoginModal from '../components/auth/LoginModal';
 import Notification from '../components/layout/Notification';
 
 const Dashboard = () => {
-  const { isAuthenticated, openLoginModal, isLoginModalOpen } = useAuth();
+  const { isAuthenticated, openLoginModal, isLoginModalOpen, login, isLoading } = useAuth();
 
   return (
     <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
       <Notification />
-      <LoginModal 
-        isOpen={isLoginModalOpen} 
-        onClose={() => openLoginModal(false)} 
-        onLogin={() => {}} // Sera géré par le hook useAuth
-      />
+	<LoginModal 
+ 	 isOpen={isLoginModalOpen} 
+	  onClose={() => openLoginModal(false)} 
+	  onLogin={login}
+	  isLoading={isLoading}
+     />
 
       {!isAuthenticated && (
         <div className="bg-white shadow rounded-lg p-6 mb-6">
