@@ -10,8 +10,8 @@ import PrivateRoute from './components/auth/PrivateRoute';
 function App() {
   return (
     <Router>
-      <AuthProvider>
-        <NotificationProvider>
+      <NotificationProvider>
+        <AuthProvider>
           <FileProvider>
             <div className="min-h-screen bg-gray-50">
               <Navbar />
@@ -21,8 +21,8 @@ function App() {
               </Routes>
             </div>
           </FileProvider>
-        </NotificationProvider>
-      </AuthProvider>
+        </AuthProvider>
+      </NotificationProvider>
     </Router>
   );
 }

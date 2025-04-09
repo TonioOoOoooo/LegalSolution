@@ -80,3 +80,5 @@ const ResultSection = () => {
     </Card>
   );
 };
+
+export default ResultSection;
